@@ -38,7 +38,7 @@ def capture(ind=''):
                 cv.imwrite(filePath+'/'+str(a)+'.jpg', cropRegion)
                 a += 1
                 i += 1
-                if(i == 10):
+                if(i == 240):
                     x['count'] = str(a)
                     EditConfig(filePath+'/info.json').writeConfig(x)
                     success = True

@@ -12,9 +12,9 @@ def buttonClick(i):
 
 resetConfig()
 root = Tk()
-root.geometry("200x700+1300+50")
+root.geometry("200x720+1300+50")
 n = ['Peace', 'You', 'Good Job', 'Dislike', 'Ok', 'Good Luck', 'Rock', 'Bang', 'Shocker', 'Bump',
-     'Help', '1', '2', '3', '4', '5', 'Sprinkle', 'Half Heart', 'Yum', 'Love', 'Naruto', 'Kaneki']
+     'Help', '1', '2', '3', '4', '5', 'Sprinkle', 'Half Heart', 'Yum', 'Love', 'Naruto', 'Kaneki','Nothing']
 x = list()
 for j, i in enumerate(n):
     x.append(Button(root, text=i, width=15,
