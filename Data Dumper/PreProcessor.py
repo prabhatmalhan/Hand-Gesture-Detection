@@ -12,7 +12,7 @@ def cleanImg(frame=None, key=None):
         blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 15, 2)
     _, res = cv2.threshold(
         th3, 70, 255, cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
-    return [res, labelCreation(key)]
+    return [res, np.array(labelCreation(key))]
 
 
 def labelCreation(n=None):
