@@ -3,8 +3,8 @@ import cv2 as cv
 
 
 def capture(ind=''):
-    filePath = './Resources/'+ind
-    x = EditConfig(filePath+'/info.json').readConfig()
+    filePath = '..\\Resources\\'+ind
+    x = EditConfig(filePath+'\\info.json').readConfig()
     a = int(x['count'])
     i = 0
     video = cv.VideoCapture(0)
@@ -27,7 +27,7 @@ def capture(ind=''):
             cv.putText(frame, sent, (0, 470), cv.FONT_HERSHEY_COMPLEX_SMALL,
                        1, (0, 0, 255), 2, cv.LINE_8)
 
-            sampleImg = cv.imread(filePath+'/sample.jpg')
+            sampleImg = cv.imread(filePath+'\\sample.jpg')
             cv.imshow('sample', sampleImg)
             cv. moveWindow('sample', 40, 30)
             cv.imshow('frame', frame)
@@ -35,12 +35,12 @@ def capture(ind=''):
             cv.imshow('cropped', cropRegion)
             cv. moveWindow('cropped', 40, 400)
             if mode:
-                cv.imwrite(filePath+'/'+str(a)+'.jpg', cropRegion)
+                cv.imwrite(filePath+'\\'+str(a)+'.jpg', cropRegion)
                 a += 1
                 i += 1
                 if(i == 240):
                     x['count'] = str(a)
-                    EditConfig(filePath+'/info.json').writeConfig(x)
+                    EditConfig(filePath+'\\info.json').writeConfig(x)
                     success = True
                     break
         except:
